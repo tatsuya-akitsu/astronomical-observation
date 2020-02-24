@@ -1,0 +1,28 @@
+@media screen and (min-width:1025px){
+}
+
+@media screen and (max-width:1024px){
+	body{
+		width:1024px;
+		height:768px;
+	}
+	h1{
+		position:absolute;
+		left:60%;
+	}	
+}
+
+@media screen and (max-width:640px){
+	body{
+		width:640px;
+		height:1136px;
+	}
+	.some-space h1{
+		font-size:70px;
+	}
+	.some-space h2{
+		font-size:50px;
+		position:absolute;
+		left:55%;
+	}
+}

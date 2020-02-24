@@ -1,0 +1,184 @@
+.HiddenCheckbox {
+	display: none;
+}
+.MenuContainer {
+	display:block;
+	width:20%;
+	height:600px;
+	position:fixed;
+	top:0%;
+	left:5%;
+	z-index:100;
+}
+
+@media screen and (min-width: 1025px){
+	.MenuContainer{
+		display:none;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.MenuContainer{
+		display:none;
+	}
+}
+
+@media screen and (max-width: 640px){
+	.MenuContainer{
+		display:block;
+	}
+}
+
+.MenuHeader {
+	position:absolute;
+	top:18%;
+	left:75%;
+	color:#fff;
+	display: block;
+	float: left;
+	font-size:30px;
+	font-weight: 100;
+	line-height: 30px;
+	margin: 0 0 0 15px;
+	opacity: 0;
+	-webkit-transform: translate3d(0, -15px, 0);
+	transform: translate3d(0, -15px, 0);
+	-webkit-transition: -webkit-transform 0.6s, opacity 0.5s;
+	transition: transform 0.6s, opacity 0.5s;
+	z-index: 2;
+}
+.MenuIcon {
+	cursor: pointer;
+	display: block;
+	float: left;
+	height: 70px;
+	position: absolute;
+	top:14%;
+	left:2%;
+	width: 70px;
+	z-index: 2;
+}
+.MenuIcon::before {
+	/*-webkit-box-shadow: #ffffff 0 35px 0;
+	box-shadow: #ffffff 0 35px 0;*/
+	background-image:url('../img/menu.png');
+	background-size:70%;
+	background-repeat:no-repeat;
+	height: 120px;
+	-webkit-transform-origin: left top;
+	-ms-transform-origin: left top;
+	transform-origin: left top;
+	width:200%;
+}
+.MenuIcon::after {
+	background-image:url('../img/rogo.png');
+	background-size:70%;
+	background-repeat:no-repeat;
+	bottom: 130px;
+	height: 120px;
+	-webkit-transform-origin: left bottom;
+	-ms-transform-origin: left bottom;
+	transform-origin: left bottom;
+	width: 200%;
+}
+.MenuIcon::before,
+.MenuIcon::after {
+	/*background: #ffffff;*/
+	display: block;
+	content: '';
+	position: absolute;
+	-webkit-transition: -webkit-box-shadow 0.2s linear, -webkit-transform 0.4s 0.2s;
+	transition: box-shadow 0.2s linear, transform 0.4s 0.2s;
+}
+.Menu {
+	bottom: 0;
+	left: -160%;
+	position: relative;
+	top: 0;
+	width: 20%;
+	-webkit-transition: left 0.4s;
+	transition: left 0.4s;
+}
+.HiddenCheckbox:checked ~ .MenuHeader {
+	opacity: 1;
+	-webkit-transform: none;
+	-ms-transform: none;
+	transform: none;
+}
+.HiddenCheckbox:checked ~ .MenuIcon::before {
+	-webkit-box-shadow: transparent 0 0 0;
+	box-shadow: transparent 0 0 0;
+	-webkit-transform: rotate(40deg) translate3d(-160px, -3px, 0);
+	transform: rotate(40deg) translate3d(-160px, -3px, 0);
+}
+.HiddenCheckbox:checked ~ .MenuIcon::after {
+	-webkit-transform: rotate(-40deg) translate3d(-80px, 175px, 0);
+	transform: rotate(-40deg) translate3d(-80px, 175px, 0);
+}
+.HiddenCheckbox:checked ~ .Menu {
+	left: 0;
+}
+.Menu-list {
+	width:182px;
+	list-style-type: none;
+	position:absolute;
+	top:320%;
+	left:20%;
+}
+.Menu-list a:hover{
+	text-decoration:none;
+}
+
+.Menu-list img{
+	width:60%;
+	position:absolute;
+	top:-28%;
+	left:15%;
+	background-color:#fff;
+}
+
+.Menu-list li{
+	font-size:25px;
+	margin-top:10%;
+}
+
+.Menu-item {
+	margin: 0;
+}
+.Menu-link {
+	color: #fff;
+	display: block;
+	overflow: hidden;
+	padding: 8px 22px;
+	position: relative;
+	text-decoration: none;
+	z-index: 1;
+}
+.Menu-link::before {
+	bottom: 0;
+	content: '';
+	left: 0;
+	position: absolute;
+	right: 100%;
+	top: 0;
+	-webkit-transition: right 0.4s;
+	transition: right 0.4s;
+	z-index: -1;
+}
+.Menu-link::after {
+	color: #fff;
+	float: right;
+	opacity: 0;
+	-webkit-transition: opacity 0.8s, -webkit-transform 0.4s;
+	transition: opacity 0.8s, transform 0.4s;
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+}
+.Menu-link:hover::before {
+	right: 0;
+}
+.Menu-link:hover::after {
+	opacity: 0.5;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

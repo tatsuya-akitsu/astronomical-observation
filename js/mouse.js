@@ -1,0 +1,22 @@
+
+$(function(){
+	$(".tr_vew").hover(function(){
+		$("#sec3").addClass("dis_vi");
+		$("#sec3").removeClass("dis_pr");
+		$("#sec3").removeClass("dis_br");
+	})
+})
+$(function(){
+	$(".tr_pro").hover(function(){
+		$("#sec3").addClass("dis_pr");
+		$("#sec3").removeClass("dis_vi");
+		$("#sec3").removeClass("dis_br");
+	})
+})
+$(function(){
+	$(".tr_blog").hover(function(){
+		$("#sec3").addClass("dis_br");
+		$("#sec3").removeClass("dis_vi");
+		$("#sec3").removeClass("dis_pr");
+	})
+})
